@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="10px"
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_marginBottom="0.0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/turnOn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ON" />
+            <Button
+                android:id="@+id/turnOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OFF" />
+            <Button
+                android:id="@+id/resetConnection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="reset" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/paired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="paired list" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                android:id="@+id/sendbutton"
+                android:layout_alignParentBottom="true" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter text..."
+                android:id="@+id/sendtext"
+                android:layout_alignParentBottom="true" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_height="10px"
+        android:layout_width="match_parent"
+        android:layout_weight="8">
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+    </RelativeLayout>
+</LinearLayout>
