@@ -27,7 +27,8 @@ type MainActivity () =
     let mutable bluetoothController : BluetoothController = new BluetoothController()
   
    
-       
+    (* Callback to display the chat web view when the bluetooth connection with *)
+    (* the remote device has been established                                   *)
     member public  this.showChat () =
         let view = this.FindViewById<WebView>(Resource_Id.webview)
         this.RunOnUiThread ( fun () -> 
@@ -35,10 +36,13 @@ type MainActivity () =
             view.LoadDataWithBaseURL("", stringBuilder.ToString(), "text/html", "utf-8", "")
         )
    
+    (* Callback to hide the chat web view when the bluetooth connection with *)
+    (* the remote device has been lost or disconnected                       *)
     member public this.hideChat () =
         let view = this.FindViewById<WebView>(Resource_Id.webview)
         this.RunOnUiThread ( fun () -> view.Visibility <- ViewStates.Gone)
 
+    (* Adds text to the webview, either local user text or remote user text *)
     member public this.AddTextToWebView (text : String) = 
         let webView = this.FindViewById<WebView>(Resource_Id.webview)
 
